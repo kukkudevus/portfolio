@@ -58,12 +58,8 @@ assets/
 - **Add an artwork to the Visual Design reel:** copy a `.dr-piece`, a `.dr-thumb`, a `.dr-fig` and a `.dr-dot` in `work/visual-design.html`. Set `data-ratio` / `--r` to the artwork's width ÷ height, and raise `--dr-n` on the `.dr` section.
 - **Contact details** are in the `.env-rows` links near the end of `index.html`.
 
-## Deploy: GitHub Pages at devikasunil.com
+## Deploy: GitHub Pages
 
-The repo is ready for GitHub Pages: `CNAME` holds the domain and `.nojekyll` makes Pages serve the files as they are.
+The site is published with GitHub Pages from the `main` branch (root folder) at https://kukkudevus.github.io/portfolio/. `.nojekyll` makes Pages serve the files as they are.
 
-1. Push this repo to GitHub, then go to **Settings → Pages**, choose **Deploy from a branch**, branch `main`, folder `/ (root)`.
-2. At your domain registrar, add these DNS records for `devikasunil.com`:
-   - Four `A` records on `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - One `CNAME` record on `www` pointing to `<your-github-username>.github.io`
-3. Back in **Settings → Pages**, confirm the custom domain reads `devikasunil.com`. Once the DNS check passes, tick **Enforce HTTPS**.
+To use a custom domain you own later, add a `CNAME` file containing the domain, enter it under **Settings → Pages → Custom domain**, and point the domain's DNS at GitHub (four `A` records on `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and a `CNAME` on `www` to `kukkudevus.github.io`).
