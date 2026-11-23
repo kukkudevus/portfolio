@@ -1,0 +1,263 @@
+/* ==========================================================================
+   Devika K S — shared styles
+   Tokens, page basics and the pieces every page uses: the square cursor,
+   the torn menu, the block wipe and the page-entry blocks.
+   ========================================================================== */
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --paper: #FAFAFA;
+  --muted: #6B6B6B;
+  --rule: #E2E2E2;
+  --placeholder: #EDEDED;
+  --rule-dark: rgba(255, 255, 255, 0.2);
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-script: 'Shrikhand', serif;
+  --font-fat: 'Bagel Fat One', serif;
+
+  --ease-expo: cubic-bezier(.16, 1, .3, 1);
+  --ease-io: cubic-bezier(.76, 0, .24, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-text-size-adjust: 100%;
+}
+html::-webkit-scrollbar { display: none; }
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video, svg { max-width: none; }
+
+/* The custom cursor replaces the system one on mouse/trackpad devices. */
+.cur-on, .cur-on * { cursor: none !important; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.mono { font-family: var(--font-mono); }
+
+/* Film grain, laid over covers and media (filter #grain is defined once per page). */
+.grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Square cursor — a white square in difference blend that springs after the
+   pointer and grows into a { LABEL } over anything tagged data-cursor.
+   -------------------------------------------------------------------------- */
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2147483647;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #000;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  opacity: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+/* --------------------------------------------------------------------------
+   Torn menu — two lines top-right drop a full-screen black sheet with a torn
+   bottom edge; big numbered links roll in one by one.
+   -------------------------------------------------------------------------- */
+.tm-btn {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  mix-blend-mode: difference;
+}
+.tm-btn:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+.tm-line {
+  position: absolute;
+  right: 5px;
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  transition: top .45s var(--ease-io), width .45s var(--ease-io), transform .45s var(--ease-io);
+}
+.tm-line:nth-child(1) { top: 15px; }
+.tm-line:nth-child(2) { top: 23px; width: 20px; }
+.tm-btn:hover .tm-line:nth-child(2) { width: 30px; }
+.tm-btn[aria-expanded="true"] .tm-line:nth-child(1) { top: 19px; transform: rotate(45deg); }
+.tm-btn[aria-expanded="true"] .tm-line:nth-child(2) { top: 19px; width: 30px; transform: rotate(-45deg); }
+
+.tm-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 104vh;
+  z-index: 1000;
+  color: #fff;
+  outline: none;
+  font-family: var(--font-sans);
+  transform: translateY(-104%);
+  transition: transform .9s var(--ease-io);
+}
+.tm-sheet[hidden] { display: none; }
+.tm-sheet.is-pre { transition: none; }
+.tm-sheet.is-in { transform: translateY(0); }
+
+.tm-torn { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.tm-inner {
+  position: relative;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.tm-list {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 16vh;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tm-list li { overflow: hidden; border-top: 1px solid var(--rule-dark); }
+
+.tm-row {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 1.6vh 0;
+  transform: translateY(100%);
+}
+.tm-sheet.is-in .tm-row {
+  transform: translateY(0);
+  transition: transform .7s var(--ease-io) calc(.495s + var(--i, 0) * .08s);
+}
+.tm-sheet.is-out .tm-row {
+  transform: translateY(-100%);
+  transition: transform .3s var(--ease-io);
+}
+
+.tm-num {
+  flex: none;
+  width: 32px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tm-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: min(10vw, 15vh);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+.tm-link:hover { text-decoration: none; }
+.tm-link:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+/* --------------------------------------------------------------------------
+   Block wipe — five columns in the incoming section's colour climb out of its
+   top edge, each faster than the page, as a stepped skyline.
+   JS sets --p (0 → 1) as the section's top edge crosses the viewport.
+   -------------------------------------------------------------------------- */
+.wipe {
+  --p: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(100% - 2px);
+  height: var(--wipeH, 100vh);
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+}
+.wipe span {
+  flex: 1 0 0;
+  margin-left: -2px; /* overlap so no seams show between columns */
+  background: var(--wipe-color, #000);
+  height: calc(var(--lead) * var(--strength, 1) * var(--p) * 1vh);
+}
+.wipe span:first-child { margin-left: 0; }
+/* lead = (column speed − 1) × 100: how many vh each column runs ahead of the page */
+.wipe span:nth-child(1) { --lead: 30; }
+.wipe span:nth-child(2) { --lead: 60; }
+.wipe span:nth-child(3) { --lead: 85; }
+.wipe span:nth-child(4) { --lead: 55; }
+.wipe span:nth-child(5) { --lead: 35; }
+
+/* --------------------------------------------------------------------------
+   Page entry — stepped black blocks slide up off the screen, middle first.
+   -------------------------------------------------------------------------- */
+.entry-blocks {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  pointer-events: none;
+}
+.entry-blocks span {
+  flex: 1 0 0;
+  height: 100%;
+  margin-left: -1px;
+  background: #000;
+  animation: entry-up .9s var(--ease-io) both;
+}
+.entry-blocks span:first-child { margin-left: 0; }
+.entry-blocks span:nth-child(1),
+.entry-blocks span:nth-child(5) { animation-delay: .12s; }
+.entry-blocks span:nth-child(2),
+.entry-blocks span:nth-child(4) { animation-delay: .06s; }
+@keyframes entry-up { from { transform: translateY(0); } to { transform: translateY(-100%); } }
+
+@keyframes bob { from { transform: translateY(0); } to { transform: translateY(4px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .tm-line, .tm-sheet, .tm-sheet.is-in .tm-row, .tm-sheet.is-out .tm-row { transition: none; }
+  .wipe, .entry-blocks { display: none; }
+}

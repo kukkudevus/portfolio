@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Depth reel — a pinned, scroll-driven reel for mixed-format artwork.
+   The piece in focus sits large in the centre; neighbours step down in size
+   and tuck slightly behind it. Phones get a swipe carousel instead.
+   ========================================================================== */
+
+.dr {
+  --dr-bg: #F2F1EE;
+  --dr-fg: #000;
+  --dr-n: 13;      /* number of artworks */
+  --dr-spa: 45;    /* scroll per artwork, in vh */
+  position: relative;
+  width: 100%;
+  height: calc(100vh + (var(--dr-n) - 1) * var(--dr-spa) * 1vh);
+  background: var(--dr-bg);
+  color: var(--dr-fg);
+  font-family: var(--font-sans);
+}
+
+.dr-btn, .dr-item, .dr-thumb, .dr-slide, .dr-dot {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+.dr-item:focus-visible, .dr-btn:focus-visible, .dr-slide:focus-visible, .dr-dot:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.dr-top {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+/* ---- reel (tablet and desktop) ---- */
+.dr-stage { position: sticky; top: 0; height: 100vh; overflow: hidden; will-change: transform; }
+.dr-stage > .dr-top { position: absolute; top: 32px; left: 24px; right: 96px; }
+
+.dr-piece { position: absolute; left: 50%; top: 52vh; opacity: 0; will-change: transform, opacity; }
+.dr-item { display: block; width: 100%; height: 100%; }
+.dr-item > span { display: block; width: 100%; height: 100%; transition: transform .3s var(--ease-expo); }
+.dr-item:hover > span, .dr-item:focus-visible > span { transform: scale(1.03); }
+.dr-item video, .dr-slide video, .dr-lb-media video,
+.dr-item img, .dr-slide img, .dr-lb-media img { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+.dr-cap { position: absolute; left: 0; right: 0; text-align: center; pointer-events: none; transition: opacity .2s linear; }
+.dr-cap-num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; opacity: 0.6; }
+.dr-cap-title { margin-top: 4px; font-size: 20px; letter-spacing: -0.02em; }
+.dr-cap-info { margin-top: 2px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; opacity: 0.6; text-transform: uppercase; }
+
+.dr-foot { position: absolute; left: 24px; right: 24px; bottom: 24px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.dr-hint { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; opacity: 0.5; }
+.dr-thumbs { display: flex; align-items: flex-end; gap: 8px; }
+.dr-thumb {
+  --th: 40px;
+  display: block;
+  box-sizing: content-box;
+  width: calc(var(--th) * var(--r, 1));
+  height: var(--th);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  opacity: 0.4;
+  transition: opacity 0.25s;
+}
+.dr-thumb.is-current { opacity: 1; border-bottom-color: var(--dr-fg); }
+.dr-thumb img { display: block; width: 100%; height: 100%; object-fit: contain; }
+@media (max-width: 1023.98px) { .dr-thumb { --th: 32px; } }
+
+/* ---- swipe carousel (phones) ---- */
+.dr-mobile { display: none; box-sizing: border-box; padding: 96px 0 48px; }
+.dr-mobile > .dr-top { padding: 0 24px; }
+.dr-car {
+  margin-top: 32px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding: 0 7vw;
+  scrollbar-width: none;
+}
+.dr-car::-webkit-scrollbar { display: none; }
+.dr-fig { flex: 0 0 86vw; box-sizing: border-box; margin: 0; padding: 0 8px; scroll-snap-align: center; }
+.dr-slide { display: flex; width: calc(86vw - 16px); height: 56vh; align-items: center; justify-content: center; }
+.dr-slide > span { display: block; width: min(calc(86vw - 16px), calc(56vh * var(--r, 1))); aspect-ratio: var(--r, 1); }
+.dr-fig figcaption { margin-top: 12px; font-family: var(--font-mono); font-size: 11px; line-height: 1.6; letter-spacing: 0.08em; }
+.dr-slide-title { font-family: var(--font-sans); font-size: 18px; letter-spacing: -0.02em; }
+.dr-slide-info { opacity: 0.6; text-transform: uppercase; }
+.dr-mnav { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 24px 0; }
+.dr-mnum { flex: none; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; white-space: nowrap; }
+.dr-dots { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.dr-dot { display: flex; width: 18px; height: 18px; align-items: center; justify-content: center; }
+.dr-dot span { display: block; width: 6px; height: 6px; background: var(--dr-fg); opacity: 0.25; }
+.dr-dot.is-current span { opacity: 1; }
+
+@media (max-width: 639.98px) {
+  .dr { height: auto; }
+  .dr-stage { display: none; }
+  .dr-mobile { display: block; }
+}
+
+/* ---- lightbox: the artwork whole, as large as fits in 88vw × 78vh ---- */
+.dr-lb { position: fixed; inset: 0; z-index: 1000; background: var(--dr-bg); color: var(--dr-fg); animation: dr-fade .25s ease both; }
+.dr-lb[hidden] { display: none; }
+@keyframes dr-fade { from { opacity: 0; } to { opacity: 1; } }
+.dr-lb-media {
+  position: absolute;
+  left: 50%;
+  top: 45vh;
+  width: min(88vw, calc(78vh * var(--r, 1)));
+  aspect-ratio: var(--r, 1);
+  transform: translate(-50%, -50%);
+  transition: opacity .2s linear;
+}
+.dr-lb-cap { position: absolute; left: 24px; bottom: 24px; font-family: var(--font-mono); font-size: 11px; line-height: 1.6; letter-spacing: 0.08em; pointer-events: none; }
+.dr-lb-title { font-family: var(--font-sans); font-size: 20px; letter-spacing: -0.02em; }
+.dr-lb-info { opacity: 0.6; text-transform: uppercase; }
+.dr-lb-nav { position: absolute; right: 24px; bottom: 24px; display: flex; gap: 24px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dr-item > span { transition: none; }
+  .dr-item:hover > span, .dr-item:focus-visible > span { transform: none; }
+  .dr-lb { animation: none; }
+  .dr-cap, .dr-lb-media { transition: none; }
+}

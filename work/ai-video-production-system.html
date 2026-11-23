@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Video Production System — Devika K S</title>
+<meta name="description" content="How Devika K S replaced filming and hand-editing with two AI pipelines for FYERS Academy's lesson library.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&amp;family=IBM+Plex+Mono:wght@400&amp;family=Shrikhand&amp;family=Bagel+Fat+One&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/case-study.css">
+<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/case-study.js" defer></script>
+</head>
+<body class="vp page-ai-video">
+<svg width="0" height="0" aria-hidden="true" style="position: absolute"><defs><filter id="grain-v1"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter></defs></svg>
+
+<div class="entry-blocks" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
+<header class="hero" style="position: relative; min-height: 100vh; box-sizing: border-box; overflow: hidden; display: flex; flex-direction: column; border-bottom: 1px solid rgba(255, 255, 255, 0.2)">
+<div class="hero-media" style="position: relative; flex: none; width: 100%; height: min(56.25vw, 100vh); overflow: hidden; background: #111">
+<div class="hero-zoom" style="position: absolute; inset: 0">
+<video src="../assets/media/ai-video/hero-loop.mp4" poster="../assets/media/ai-video/hero-loop-poster.jpg" muted autoplay loop playsinline aria-hidden="true" style="display: block; width: 100%; height: 100%; object-fit: contain; filter: grayscale(1) contrast(1.05)"></video>
+
+<svg width="100%" height="100%" aria-hidden="true" style="position: absolute; inset: 0; opacity: 0.16; pointer-events: none"><rect width="100%" height="100%" filter="url(#grain-v1)"></rect></svg>
+</div>
+</div>
+<div class="tbar" style="position: relative; margin: 0 24px; padding: 24px 0 48px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px">
+<h1 class="hero-title" style="margin: 0; font-size: 48px; line-height: 1.05; font-weight: 500; letter-spacing: -0.03em; color: #fff">AI Video Production System</h1>
+<span style="flex: none; font-family: 'Shrikhand', serif; font-style: italic; font-size: 32px; line-height: 1; color: rgba(255, 255, 255, 0.5)">01</span>
+</div>
+<p class="hsub" style="margin: 12px 0 0; max-width: 640px; font-size: 20px; line-height: 1.35; letter-spacing: -0.01em; color: rgba(255, 255, 255, 0.7)">How I replaced filming and hand-editing with two AI pipelines for FYERS Academy’s lesson library.</p>
+</div>
+<div class="hb" style="position: relative; margin: auto 24px 24px; display: grid; grid-template-columns: 1fr 1.3fr 0.8fr 1.9fr auto; column-gap: 24px; align-items: start">
+<div><div class="hk">{ ROLE }</div><div class="hv">Sole designer of both pipelines</div></div>
+<div><div class="hk">{ WORKED WITH }</div><div class="hv">Video editors, the founder, product and marketing teams</div></div>
+<div><div class="hk">{ TIMELINE }</div><div class="hv">3 months, 2026</div></div>
+<div><div class="hk">{ TOOLS }</div><div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">HeyGen (Avatar 5)</span><span class="chip">ElevenLabs</span><span class="chip">Claude Design</span><span class="chip">Claude Code</span><span class="chip">Premiere Pro (via MCP)</span></div></div>
+<span class="hk" style="color: #fff; white-space: nowrap">{ SCROLL } <span class="bob">↓</span></span>
+</div>
+</header>
+
+<section class="strip" aria-label="Outcomes">
+<div><span class="fig">2–3 days → 1 day</span><span class="hk">{ EDITING PER LESSON }</span></div>
+<div><span class="fig">1.5+ hrs → 20–30 min</span><span class="hk">{ GENERATION PER LESSON }</span></div>
+<div><span class="fig">Adopted across teams</span><span class="hk">{ PRODUCT + MARKETING }</span></div>
+</section>
+
+<main class="vmain" style="box-sizing: border-box; padding: 200px 24px; display: flex; flex-direction: column; gap: 200px">
+
+<section aria-label="The problem" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>01 · The problem</div>
+<div class="flow">
+<p class="p">FYERS Academy, a paid capital-markets learning platform, needed a full library of short educational videos ready at launch. Stakeholders chose the founder as the face of every lesson, giving learners one consistent, trusted presenter who wouldn’t leave partway through the series.</p>
+<p class="p">That decision created two bottlenecks:</p>
+<div class="cards c2">
+<div class="card"><span class="cl">{ BOTTLENECK 1 }</span><h3>Filming.</h3><p>Each studio shoot took at least 1.5 hours for setup, preparation, and retakes. The founder couldn’t film hundreds of videos.</p></div>
+<div class="card"><span class="cl">{ BOTTLENECK 2 }</span><h3>Editing.</h3><p>Stakeholders wanted animation across most of every lesson. Manually, one animation-heavy 6-minute video took an editor 2–3 days.</p></div>
+</div>
+<div class="dg" data-enter="1">
+<svg viewBox="0 0 1280 520" role="img" aria-label="The problem at scale: hundreds of lessons, times 2 to 3 days of editing each, couldn’t be produced by hand." style="display: block; width: 100%; height: auto; min-width: 640px">
+<defs>
+<marker id="arr-sc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+<path d="M0 0 L10 5 L0 10 z" fill="#fff"/>
+</marker>
+</defs>
+<rect width="1280" height="520" fill="#000"/>
+<g data-i="1" style="--i: 0">
+<text x="40" y="56" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1" fill="#fff" fill-opacity="1" text-anchor="start">{ THE PROBLEM AT SCALE }</text>
+</g>
+<g data-i="1" style="--i: 1">
+<rect x="40" y="120" width="14" height="14" fill="#fff"/>
+<rect x="60" y="120" width="14" height="14" fill="#fff"/>
+<rect x="80" y="120" width="14" height="14" fill="#fff"/>
+<rect x="100" y="120" width="14" height="14" fill="#fff"/>
+<rect x="120" y="120" width="14" height="14" fill="#fff"/>
+<rect x="140" y="120" width="14" height="14" fill="#fff"/>
+<rect x="160" y="120" width="14" height="14" fill="#fff"/>
+<rect x="180" y="120" width="14" height="14" fill="#fff"/>
+<rect x="200" y="120" width="14" height="14" fill="#fff"/>
+<rect x="220" y="120" width="14" height="14" fill="#fff"/>
+<rect x="240" y="120" width="14" height="14" fill="#fff"/>
+<rect x="260" y="120" width="14" height="14" fill="#fff"/>
+<rect x="280" y="120" width="14" height="14" fill="#fff"/>
+<rect x="300" y="120" width="14" height="14" fill="#fff"/>
+<rect x="320" y="120" width="14" height="14" fill="#fff"/>
+<rect x="340" y="120" width="14" height="14" fill="#fff"/>
+<rect x="360" y="120" width="14" height="14" fill="#fff"/>
+<rect x="380" y="120" width="14" height="14" fill="#fff"/>
+<rect x="400" y="120" width="14" height="14" fill="#fff"/>
+<rect x="420" y="120" width="14" height="14" fill="#fff"/>
+<rect x="440" y="120" width="14" height="14" fill="#fff"/>
+<rect x="460" y="120" width="14" height="14" fill="#fff"/>
+<rect x="480" y="120" width="14" height="14" fill="#fff"/>
+<rect x="500" y="120" width="14" height="14" fill="#fff"/>
+</g>
+<g data-i="1" style="--i: 2">
+<rect x="40" y="140" width="14" height="14" fill="#fff"/>
+<rect x="60" y="140" width="14" height="14" fill="#fff"/>
+<rect x="80" y="140" width="14" height="14" fill="#fff"/>
+<rect x="100" y="140" width="14" height="14" fill="#fff"/>
+<rect x="120" y="140" width="14" height="14" fill="#fff"/>
+<rect x="140" y="140" width="14" height="14" fill="#fff"/>
+<rect x="160" y="140" width="14" height="14" fill="#fff"/>
+<rect x="180" y="140" width="14" height="14" fill="#fff"/>
+<rect x="200" y="140" width="14" height="14" fill="#fff"/>
+<rect x="220" y="140" width="14" height="14" fill="#fff"/>
+<rect x="240" y="140" width="14" height="14" fill="#fff"/>
+<rect x="260" y="140" width="14" height="14" fill="#fff"/>
+<rect x="280" y="140" width="14" height="14" fill="#fff"/>
+<rect x="300" y="140" width="14" height="14" fill="#fff"/>
+<rect x="320" y="140" width="14" height="14" fill="#fff"/>
+<rect x="340" y="140" width="14" height="14" fill="#fff"/>
+<rect x="360" y="140" width="14" height="14" fill="#fff"/>
+<rect x="380" y="140" width="14" height="14" fill="#fff"/>
+<rect x="400" y="140" width="14" height="14" fill="#fff"/>
+<rect x="420" y="140" width="14" height="14" fill="#fff"/>
+<rect x="440" y="140" width="14" height="14" fill="#fff"/>
+<rect x="460" y="140" width="14" height="14" fill="#fff"/>
+<rect x="480" y="140" width="14" height="14" fill="#fff"/>
+<rect x="500" y="140" width="14" height="14" fill="#fff"/>
+</g>
+<g data-i="1" style="--i: 3">
+<rect x="40" y="160" width="14" height="14" fill="#fff"/>
+<rect x="60" y="160" width="14" height="14" fill="#fff"/>
+<rect x="80" y="160" width="14" height="14" fill="#fff"/>
+<rect x="100" y="160" width="14" height="14" fill="#fff"/>
+<rect x="120" y="160" width="14" height="14" fill="#fff"/>
+<rect x="140" y="160" width="14" height="14" fill="#fff"/>
+<rect x="160" y="160" width="14" height="14" fill="#fff"/>
+<rect x="180" y="160" width="14" height="14" fill="#fff"/>
+<rect x="200" y="160" width="14" height="14" fill="#fff"/>
+<rect x="220" y="160" width="14" height="14" fill="#fff"/>
+<rect x="240" y="160" width="14" height="14" fill="#fff"/>
+<rect x="260" y="160" width="14" height="14" fill="#fff"/>
+<rect x="280" y="160" width="14" height="14" fill="#fff"/>
+<rect x="300" y="160" width="14" height="14" fill="#fff"/>
+<rect x="320" y="160" width="14" height="14" fill="#fff"/>
+<rect x="340" y="160" width="14" height="14" fill="#fff"/>
+<rect x="360" y="160" width="14" height="14" fill="#fff"/>
+<rect x="380" y="160" width="14" height="14" fill="#fff"/>
+<rect x="400" y="160" width="14" height="14" fill="#fff"/>
+<rect x="420" y="160" width="14" height="14" fill="#fff"/>
+<rect x="440" y="160" width="14" height="14" fill="#fff"/>
+<rect x="460" y="160" width="14" height="14" fill="#fff"/>
+<rect x="480" y="160" width="14" height="14" fill="#fff"/>
+<rect x="500" y="160" width="14" height="14" fill="#fff"/>
+</g>
+<g data-i="1" style="--i: 4">
+<rect x="40" y="180" width="14" height="14" fill="#fff"/>
+<rect x="60" y="180" width="14" height="14" fill="#fff"/>
+<rect x="80" y="180" width="14" height="14" fill="#fff"/>
+<rect x="100" y="180" width="14" height="14" fill="#fff"/>
+<rect x="120" y="180" width="14" height="14" fill="#fff"/>
+<rect x="140" y="180" width="14" height="14" fill="#fff"/>
+<rect x="160" y="180" width="14" height="14" fill="#fff"/>
+<rect x="180" y="180" width="14" height="14" fill="#fff"/>
+<rect x="200" y="180" width="14" height="14" fill="#fff"/>
+<rect x="220" y="180" width="14" height="14" fill="#fff"/>
+<rect x="240" y="180" width="14" height="14" fill="#fff"/>
+<rect x="260" y="180" width="14" height="14" fill="#fff"/>
+<rect x="280" y="180" width="14" height="14" fill="#fff"/>
+<rect x="300" y="180" width="14" height="14" fill="#fff"/>
+<rect x="320" y="180" width="14" height="14" fill="#fff"/>
+<rect x="340" y="180" width="14" height="14" fill="#fff"/>
+<rect x="360" y="180" width="14" height="14" fill="#fff"/>
+<rect x="380" y="180" width="14" height="14" fill="#fff"/>
+<rect x="400" y="180" width="14" height="14" fill="#fff"/>
+<rect x="420" y="180" width="14" height="14" fill="#fff"/>
+<rect x="440" y="180" width="14" height="14" fill="#fff"/>
+<rect x="460" y="180" width="14" height="14" fill="#fff"/>
+<rect x="480" y="180" width="14" height="14" fill="#fff"/>
+<rect x="500" y="180" width="14" height="14" fill="#fff"/>
+</g>
+<g data-i="1" style="--i: 5">
+<rect x="40" y="200" width="14" height="14" fill="#fff"/>
+<rect x="60" y="200" width="14" height="14" fill="#fff"/>
+<rect x="80" y="200" width="14" height="14" fill="#fff"/>
+<rect x="100" y="200" width="14" height="14" fill="#fff"/>
+<rect x="120" y="200" width="14" height="14" fill="#fff"/>
+<rect x="140" y="200" width="14" height="14" fill="#fff"/>
+<rect x="160" y="200" width="14" height="14" fill="#fff"/>
+<rect x="180" y="200" width="14" height="14" fill="#fff"/>
+<rect x="200" y="200" width="14" height="14" fill="#fff"/>
+<rect x="220" y="200" width="14" height="14" fill="#fff"/>
+<rect x="240" y="200" width="14" height="14" fill="#fff"/>
+<rect x="260" y="200" width="14" height="14" fill="#fff"/>
+<rect x="280" y="200" width="14" height="14" fill="#fff"/>
+<rect x="300" y="200" width="14" height="14" fill="#fff"/>
+<rect x="320" y="200" width="14" height="14" fill="#fff"/>
+<rect x="340" y="200" width="14" height="14" fill="#fff"/>
+<rect x="360" y="200" width="14" height="14" fill="#fff"/>
+<rect x="380" y="200" width="14" height="14" fill="#fff"/>
+<rect x="400" y="200" width="14" height="14" fill="#fff"/>
+<rect x="420" y="200" width="14" height="14" fill="#fff"/>
+<rect x="440" y="200" width="14" height="14" fill="#fff"/>
+<rect x="460" y="200" width="14" height="14" fill="#fff"/>
+<rect x="480" y="200" width="14" height="14" fill="#fff"/>
+<rect x="500" y="200" width="14" height="14" fill="#fff"/>
+</g>
+<g data-i="1" style="--i: 6">
+<rect x="40" y="220" width="14" height="14" fill="#fff"/>
+<rect x="60" y="220" width="14" height="14" fill="#fff"/>
+<rect x="80" y="220" width="14" height="14" fill="#fff"/>
+<rect x="100" y="220" width="14" height="14" fill="#fff"/>
+<rect x="120" y="220" width="14" height="14" fill="#fff"/>
+<rect x="140" y="220" width="14" height="14" fill="#fff"/>
+<rect x="160" y="220" width="14" height="14" fill="#fff"/>
+<rect x="180" y="220" width="14" height="14" fill="#fff"/>
+<rect x="200" y="220" width="14" height="14" fill="#fff"/>
+<rect x="220" y="220" width="14" height="14" fill="#fff"/>
+<rect x="240" y="220" width="14" height="14" fill="#fff"/>
+<rect x="260" y="220" width="14" height="14" fill="#fff"/>
+<rect x="280" y="220" width="14" height="14" fill="#fff"/>
+<rect x="300" y="220" width="14" height="14" fill="#fff"/>
+<rect x="320" y="220" width="14" height="14" fill="#fff"/>
+<rect x="340" y="220" width="14" height="14" fill="#fff"/>
+<rect x="360" y="220" width="14" height="14" fill="#fff"/>
+<rect x="380" y="220" width="14" height="14" fill="#fff"/>
+<rect x="400" y="220" width="14" height="14" fill="#fff"/>
+<rect x="420" y="220" width="14" height="14" fill="#fff"/>
+<rect x="440" y="220" width="14" height="14" fill="#fff"/>
+<rect x="460" y="220" width="14" height="14" fill="#fff"/>
+<rect x="480" y="220" width="14" height="14" fill="#fff"/>
+<rect x="500" y="220" width="14" height="14" fill="#fff"/>
+</g>
+<g data-i="1" style="--i: 7">
+<rect x="40" y="240" width="14" height="14" fill="#fff"/>
+<rect x="60" y="240" width="14" height="14" fill="#fff"/>
+<rect x="80" y="240" width="14" height="14" fill="#fff"/>
+<rect x="100" y="240" width="14" height="14" fill="#fff"/>
+<rect x="120" y="240" width="14" height="14" fill="#fff"/>
+<rect x="140" y="240" width="14" height="14" fill="#fff"/>
+<rect x="160" y="240" width="14" height="14" fill="#fff"/>
+<rect x="180" y="240" width="14" height="14" fill="#fff"/>
+<rect x="200" y="240" width="14" height="14" fill="#fff"/>
+<rect x="220" y="240" width="14" height="14" fill="#fff"/>
+<rect x="240" y="240" width="14" height="14" fill="#fff"/>
+<rect x="260" y="240" width="14" height="14" fill="#fff"/>
+<rect x="280" y="240" width="14" height="14" fill="#fff"/>
+<rect x="300" y="240" width="14" height="14" fill="#fff"/>
+<rect x="320" y="240" width="14" height="14" fill="#fff"/>
+<rect x="340" y="240" width="14" height="14" fill="#fff"/>
+<rect x="360" y="240" width="14" height="14" fill="#fff"/>
+<rect x="380" y="240" width="14" height="14" fill="#fff"/>
+<rect x="400" y="240" width="14" height="14" fill="#fff"/>
+<rect x="420" y="240" width="14" height="14" fill="#fff"/>
+<rect x="440" y="240" width="14" height="14" fill="#fff"/>
+<rect x="460" y="240" width="14" height="14" fill="#fff"/>
+<rect x="480" y="240" width="14" height="14" fill="#fff"/>
+<rect x="500" y="240" width="14" height="14" fill="#fff"/>
+</g>
+<g data-i="1" style="--i: 8">
+<rect x="40" y="260" width="14" height="14" fill="#fff"/>
+<rect x="60" y="260" width="14" height="14" fill="#fff"/>
+<rect x="80" y="260" width="14" height="14" fill="#fff"/>
+<rect x="100" y="260" width="14" height="14" fill="#fff"/>
+<rect x="120" y="260" width="14" height="14" fill="#fff"/>
+<rect x="140" y="260" width="14" height="14" fill="#fff"/>
+<rect x="160" y="260" width="14" height="14" fill="#fff"/>
+<rect x="180" y="260" width="14" height="14" fill="#fff"/>
+<rect x="200" y="260" width="14" height="14" fill="#fff"/>
+<rect x="220" y="260" width="14" height="14" fill="#fff"/>
+<rect x="240" y="260" width="14" height="14" fill="#fff"/>
+<rect x="260" y="260" width="14" height="14" fill="#fff"/>
+<rect x="280" y="260" width="14" height="14" fill="#fff"/>
+<rect x="300" y="260" width="14" height="14" fill="#fff"/>
+<rect x="320" y="260" width="14" height="14" fill="#fff"/>
+<rect x="340" y="260" width="14" height="14" fill="#fff"/>
+<rect x="360" y="260" width="14" height="14" fill="#fff"/>
+<rect x="380" y="260" width="14" height="14" fill="#fff"/>
+<rect x="400" y="260" width="14" height="14" fill="#fff"/>
+<rect x="420" y="260" width="14" height="14" fill="#fff"/>
+<rect x="440" y="260" width="14" height="14" fill="#fff"/>
+<rect x="460" y="260" width="14" height="14" fill="#fff"/>
+<rect x="480" y="260" width="14" height="14" fill="#fff"/>
+<rect x="500" y="260" width="14" height="14" fill="#fff"/>
+<text x="40" y="308" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.7" text-anchor="start">HUNDREDS OF LESSONS</text>
+</g>
+<g data-i="1" style="--i: 9">
+<text x="574" y="230" font-family="Inter, Helvetica, Arial, sans-serif" font-size="96" font-weight="400" fill="#fff" letter-spacing="-3">×</text>
+</g>
+<g data-i="1" style="--i: 10">
+<rect x="674" y="120" width="110" height="154" fill="#fff" stroke="#fff" stroke-width="1.5"/>
+<text x="729" y="208" font-family="IBM Plex Mono, monospace" font-size="13" fill="#000" text-anchor="middle" letter-spacing="1">DAY 1</text>
+</g>
+<g data-i="1" style="--i: 11">
+<rect x="798" y="120" width="110" height="154" fill="#fff" stroke="#fff" stroke-width="1.5"/>
+<text x="853" y="208" font-family="IBM Plex Mono, monospace" font-size="13" fill="#000" text-anchor="middle" letter-spacing="1">DAY 2</text>
+</g>
+<g data-i="1" style="--i: 12">
+<rect x="922" y="120" width="110" height="154" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="977" y="208" font-family="IBM Plex Mono, monospace" font-size="13" fill="#fff" text-anchor="middle" letter-spacing="1">DAY 3</text>
+<text x="674" y="308" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.7" text-anchor="start">2–3 DAYS OF EDITING EACH</text>
+</g>
+<g data-i="1" style="--i: 13">
+<line x1="40" y1="380" x2="1240" y2="380" stroke="#fff" stroke-opacity="0.2" stroke-width="1"/>
+<text x="40" y="460" font-family="Inter, Helvetica, Arial, sans-serif" font-size="56" font-weight="400" fill="#fff" letter-spacing="-2">= couldn’t be produced by hand.</text>
+</g>
+</svg>
+</div>
+</div>
+</section>
+
+<section aria-label="Discovery" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>02 · Discovery</div>
+<div class="flow">
+<p class="p">Before choosing any tools, I researched what format the lessons should take.</p>
+<div class="cards c2">
+<div class="card"><span class="cl">{ LENGTH }</span><h3>Under 5–6 minutes.</h3><p>I reviewed studies on attention and online learning, analyzed how successful education channels and course platforms structure their lessons, and looked at platform engagement data, using AI tools to speed up and cross-check the research. Short enough to hold attention, long enough to teach one concept properly.</p></div>
+<div class="card"><span class="cl">{ ORIENTATION }</span><h3>Landscape.</h3><p>Portrait video is associated with quick, scroll-based viewing, while landscape suits longer, intentional watching. These lessons were meant to be studied, not scrolled past.</p></div>
+</div>
+<p class="p">These two decisions set the standard for every lesson, and they defined what the production system had to deliver.</p>
+</div>
+</section>
+
+<section aria-label="Part 1: the avatar pipeline" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>03 · Part 1 — The avatar pipeline</div>
+<div class="flow">
+<p class="p">To remove the filming bottleneck, I explored AI avatar generation and chose HeyGen. Getting a natural result took far more than uploading footage.</p>
+<blockquote class="pq">AI doesn’t fix flaws in the input. It amplifies them.</blockquote>
+<p class="p">So most of my work went into designing the input.</p>
+<table class="tb">
+<colgroup><col style="width: 30%"><col style="width: 40%"><col style="width: 30%"></colgroup>
+<thead><tr><th scope="col">I tried</th><th scope="col">What happened</th><th scope="col">What I changed</th></tr></thead>
+<tbody>
+<tr data-rowfade="1"><td data-label="I TRIED">Green-screen footage, with the background added later</td><td data-label="WHAT HAPPENED">Background removal never looked realistic</td><td data-label="WHAT I CHANGED">Shot on a real, well-lit set instead</td></tr>
+<tr data-rowfade="1"><td data-label="I TRIED">Scripted, read-out delivery</td><td data-label="WHAT HAPPENED">Awkward pauses and forced smiles became noticeably worse, even unsettling, in the avatar</td><td data-label="WHAT I CHANGED">Interview-style shoots with natural answers</td></tr>
+<tr data-rowfade="1"><td data-label="I TRIED">Dark lighting and color grading</td><td data-label="WHAT HAPPENED">Small details, like logos on clothing, came out distorted</td><td data-label="WHAT I CHANGED">Bright, evenly lit footage</td></tr>
+<tr data-rowfade="1"><td data-label="I TRIED">2- and 4-minute training clips</td><td data-label="WHAT HAPPENED">Not enough for a natural result</td><td data-label="WHAT I CHANGED">6–8 minutes worked best, on HeyGen’s newer Avatar 5 engine once it was released</td></tr>
+</tbody>
+</table>
+<h3 class="sub">Directing the founder for AI</h3>
+<p class="p">To capture natural expressions, I studied how animated films record performances for lifelike emotion and mouth movement. I wrote interview questions designed to draw out specific emotions and cover every vowel sound and number, while the founder spoke directly to the camera, not to the person asking the questions.</p>
+<h3 class="sub">The voice took three attempts in ElevenLabs</h3>
+<ol class="steps">
+<li><span class="n">01</span><span class="t">A 10-minute recording, looped to 30 minutes: the voice matched, but tone and pronunciation fell flat.</span></li>
+<li><span class="n">02</span><span class="t">About an hour of the founder’s existing interviews, stitched together to avoid taking more of his time: each was recorded in a different environment, so the cloned voice’s tone and bass shifted mid-sentence.</span></li>
+<li><span class="n">03</span><span class="t">A dedicated, scripted 1-hour recording in one consistent environment: this produced the result I needed.</span></li>
+</ol>
+<p class="p">The final voice clone connects to HeyGen through an API, so every lesson is generated in the founder’s voice.</p>
+<div class="dg" data-enter="1">
+<svg viewBox="0 0 1680 600" role="img" aria-label="Avatar pipeline. Face: interview-style footage, 6 to 8 minutes on a bright real set, goes into a HeyGen Avatar 5 avatar. Voice: a one-hour recording in one environment goes into an ElevenLabs voice clone, then an API. Both feed HeyGen, which generates the founder’s face and voice into a finished lesson: 20 to 30 minutes per lesson, several at once. Before: 1.5+ hours per studio shoot." style="display: block; width: 100%; height: auto; min-width: 900px">
+<defs>
+<marker id="arr-av" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+<path d="M0 0 L10 5 L0 10 z" fill="#fff"/>
+</marker>
+</defs>
+<rect width="1680" height="600" fill="#000"/>
+<g data-i="1" style="--i: 0">
+<text x="40" y="56" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1" fill="#fff" fill-opacity="1" text-anchor="start">{ AVATAR PIPELINE }</text>
+<text x="40" y="128" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ FACE }</text>
+<text x="40" y="338" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ VOICE }</text>
+<rect x="40" y="150" width="260" height="120" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="170.0" y="193.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">FOOTAGE</text>
+<text x="170.0" y="215.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">INTERVIEW-STYLE</text>
+<text x="170.0" y="237.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">6–8 MIN · BRIGHT, REAL SET</text>
+</g>
+<g data-i="1" style="--i: 2">
+<rect x="380" y="150" width="240" height="120" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="500.0" y="204.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">AVATAR</text>
+<text x="500.0" y="226.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">HEYGEN AVATAR 5</text>
+</g>
+<g data-i="1" style="--i: 0">
+<rect x="40" y="360" width="260" height="120" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="170.0" y="414.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">VOICE RECORDING</text>
+<text x="170.0" y="436.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">1 HR · ONE ENVIRONMENT</text>
+</g>
+<g data-i="1" style="--i: 2">
+<rect x="380" y="360" width="240" height="120" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="500.0" y="414.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">VOICE CLONE</text>
+<text x="500.0" y="436.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">ELEVENLABS</text>
+</g>
+<g data-i="1" style="--i: 3">
+<rect x="700" y="360" width="160" height="120" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="780.0" y="425.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">API</text>
+</g>
+<g data-i="1" style="--i: 5">
+<rect x="980" y="255" width="280" height="120" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="1120.0" y="298.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">GENERATE</text>
+<text x="1120.0" y="320.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">HEYGEN</text>
+<text x="1120.0" y="342.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">FOUNDER'S FACE + VOICE</text>
+</g>
+<g data-i="1" style="--i: 7">
+<rect x="1340" y="255" width="300" height="120" fill="#fff" stroke="#fff" stroke-width="1.5"/>
+<text x="1490.0" y="298.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#000" fill-opacity="1" text-anchor="middle">FINISHED LESSON</text>
+<text x="1490.0" y="320.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#000" fill-opacity="0.7" text-anchor="middle">20–30 MIN PER LESSON</text>
+<text x="1490.0" y="342.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#000" fill-opacity="0.7" text-anchor="middle">SEVERAL AT ONCE</text>
+</g>
+<g data-i="1" style="--i: 1">
+<path d="M300 210 H372" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-av)"/>
+<path d="M300 420 H372" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-av)"/>
+</g>
+<g data-i="1" style="--i: 3">
+<path d="M620 420 H692" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-av)"/>
+</g>
+<g data-i="1" style="--i: 4">
+<path d="M620 210 H930 V290 H972" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-av)"/>
+<path d="M860 420 H930 V340 H972" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-av)"/>
+</g>
+<g data-i="1" style="--i: 6">
+<path d="M1260 315 H1332" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-av)"/>
+</g>
+<g data-i="1" style="--i: 8">
+<text x="1640" y="560" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="end">{ BEFORE: 1.5+ HRS PER STUDIO SHOOT }</text>
+</g>
+</svg>
+</div>
+<p class="p">The result: a 6-minute lesson now takes 20–30 minutes to generate, including revisions, compared with at least 1.5 hours per studio shoot, and several lessons can be generated at once. The pipeline was later adopted for product and marketing videos beyond FYERS Academy.</p>
+<div>
+<figure class="media clipm" data-enter="1">
+<video src="../assets/media/ai-video/sample-lesson.mp4" poster="../assets/media/ai-video/sample-lesson-poster.jpg" controls muted playsinline preload="metadata" aria-label="Sample lesson clip generated with the pipeline: an AI avatar of the presenter speaking" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #000"></video>
+
+</figure>
+<div class="cap">{ SAMPLE · GENERATED WITH THE PIPELINE }</div>
+</div>
+</div>
+</section>
+
+<section aria-label="Part 2: the editing bottleneck" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>04 · Part 2 — The editing bottleneck</div>
+<div class="flow">
+<p class="p">Manual editing delivered the quality, but not the timeline. The product needed to launch within a few months, so I brought AI into the editing process.</p>
+<table class="tb">
+<colgroup><col style="width: 30%"><col style="width: 40%"><col style="width: 30%"></colgroup>
+<thead><tr><th scope="col">I tried</th><th scope="col">What happened</th><th scope="col">What I learned</th></tr></thead>
+<tbody>
+<tr data-rowfade="1"><td data-label="I TRIED">Giving Claude Code a manually edited video to generate from</td><td data-label="WHAT HAPPENED">It produced visuals, but below the quality bar, and corrections were slow</td><td data-label="WHAT I LEARNED">Code-first generation made visual corrections hard</td></tr>
+<tr data-rowfade="1"><td data-label="I TRIED">Switching to Claude Design</td><td data-label="WHAT HAPPENED">Corrections became much faster, since I could point to the exact screen to fix, but the visuals still weren’t right</td><td data-label="WHAT I LEARNED">The right tool, but missing something</td></tr>
+<tr data-rowfade="1"><td data-label="I TRIED">Adding the brand manual and animation guidelines</td><td data-label="WHAT HAPPENED">Little improvement</td><td data-label="WHAT I LEARNED">Guidelines describe how things should look, not why a visual explains a line</td></tr>
+</tbody>
+</table>
+<h3 class="sub">The breakthrough: a playbook of reasoning, not rules</h3>
+<p class="p">I took screenshots of each scene from well-edited videos, paired them with the exact script lines, and documented why the editor chose that visual: how it represents the idea being spoken. With a few more strong reference videos, this became the first version of the visual storytelling playbook. Given a new script, Claude Design could now follow the same reasoning a skilled editor would.</p>
+<h3 class="sub">A playbook that learns</h3>
+<p class="p">I added a step that analyzes every correction made to a scene. If a correction reflects reusable logic, such as a new way to represent a concept, it gets logged into the playbook. If it’s just a wording change, it doesn’t. With every lesson, the playbook gets better.</p>
+<h3 class="sub">Assembly</h3>
+<p class="p">Claude Design can’t assemble a video, so I connected Claude Code to Premiere Pro through MCP. It places the approved animations onto the avatar footage, which also makes later changes much easier.</p>
+<div class="dg" data-enter="1">
+<svg viewBox="0 0 1680 700" role="img" aria-label="Editing workflow with two review gates and a learning loop. Script, then Claude Design plus the playbook makes visuals per scene, then gate 1: an editor approves visuals. Claude Code assembles in Premiere Pro via MCP, then gate 2: an editor checks the final cut, and the lesson is out in 1 day, not 2 to 3. Corrections from both gates are analysed and filtered: reusable logic teaches the playbook, which feeds the next lesson; wording-only changes are discarded." style="display: block; width: 100%; height: auto; min-width: 900px">
+<defs>
+<marker id="arr-ed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+<path d="M0 0 L10 5 L0 10 z" fill="#fff"/>
+</marker>
+</defs>
+<rect width="1680" height="700" fill="#000"/>
+<g data-i="1" style="--i: 0">
+<text x="42" y="56" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1" fill="#fff" fill-opacity="1" text-anchor="start">{ EDITING WORKFLOW · TWO REVIEW GATES AND A LEARNING LOOP }</text>
+<text x="42" y="126" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ INPUT }</text>
+<rect x="42" y="140" width="216" height="120" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="150.0" y="194.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">SCRIPT</text>
+<text x="150.0" y="216.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">NEW LESSON</text>
+</g>
+<g data-i="1" style="--i: 1">
+<path d="M258 200 H310" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-ed)"/>
+</g>
+<g data-i="1" style="--i: 2">
+<text x="318" y="126" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ DESIGN }</text>
+<rect x="318" y="140" width="216" height="120" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="426.0" y="183.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">CLAUDE DESIGN</text>
+<text x="426.0" y="205.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">+ PLAYBOOK</text>
+<text x="426.0" y="227.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">VISUALS PER SCENE</text>
+</g>
+<g data-i="1" style="--i: 3">
+<path d="M534 200 H586" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-ed)"/>
+</g>
+<g data-i="1" style="--i: 4">
+<text x="594" y="126" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ GATE 1 }</text>
+<rect x="594" y="140" width="216" height="120" fill="#fff" stroke="#fff" stroke-width="1.5"/>
+<text x="702.0" y="194.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#000" fill-opacity="1" text-anchor="middle">EDITOR</text>
+<text x="702.0" y="216.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#000" fill-opacity="0.7" text-anchor="middle">APPROVES VISUALS</text>
+</g>
+<g data-i="1" style="--i: 5">
+<path d="M810 200 H862" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-ed)"/>
+</g>
+<g data-i="1" style="--i: 6">
+<text x="870" y="126" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ ASSEMBLY }</text>
+<rect x="870" y="140" width="216" height="120" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="978.0" y="183.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">CLAUDE CODE</text>
+<text x="978.0" y="205.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">→ PREMIERE PRO</text>
+<text x="978.0" y="227.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">VIA MCP</text>
+</g>
+<g data-i="1" style="--i: 7">
+<path d="M1086 200 H1138" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-ed)"/>
+</g>
+<g data-i="1" style="--i: 8">
+<text x="1146" y="126" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ GATE 2 }</text>
+<rect x="1146" y="140" width="216" height="120" fill="#fff" stroke="#fff" stroke-width="1.5"/>
+<text x="1254.0" y="194.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#000" fill-opacity="1" text-anchor="middle">EDITOR</text>
+<text x="1254.0" y="216.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#000" fill-opacity="0.7" text-anchor="middle">CHECKS FINAL CUT</text>
+</g>
+<g data-i="1" style="--i: 9">
+<path d="M1362 200 H1414" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-ed)"/>
+</g>
+<g data-i="1" style="--i: 10">
+<text x="1422" y="126" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ OUTPUT }</text>
+<rect x="1422" y="140" width="216" height="120" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="1530.0" y="194.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">LESSON</text>
+<text x="1530.0" y="216.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">1 DAY, NOT 2–3</text>
+</g>
+<g data-i="1" style="--i: 11">
+<path d="M702 260 V330 H1254" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<path d="M1254 260 V392" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arr-ed)"/>
+<text x="978.0" y="320" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.7" text-anchor="middle">CORRECTIONS</text>
+</g>
+<g data-i="1" style="--i: 12">
+<rect x="1146" y="400" width="216" height="100" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="1254.0" y="444.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">ANALYSE</text>
+<text x="1254.0" y="466.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">EVERY CORRECTION</text>
+</g>
+<g data-i="1" style="--i: 14">
+<rect x="870" y="400" width="216" height="100" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="978.0" y="444.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">FILTER</text>
+<text x="978.0" y="466.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">REUSABLE LOGIC?</text>
+</g>
+<g data-i="1" style="--i: 16">
+<rect x="318" y="400" width="216" height="100" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="426.0" y="444.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">PLAYBOOK LEARNS</text>
+<text x="426.0" y="466.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">NEW VISUAL LOGIC</text>
+</g>
+<g data-i="1" style="--i: 13">
+<path d="M1146 450 H1094" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arr-ed)"/>
+</g>
+<g data-i="1" style="--i: 15">
+<path d="M870 450 H542" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arr-ed)"/>
+<text x="702.0" y="438" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="1" text-anchor="middle">YES</text>
+</g>
+<g data-i="1" style="--i: 17">
+<path d="M426 400 V268" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arr-ed)"/>
+<text x="440" y="340" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">FEEDS THE NEXT LESSON</text>
+<path d="M978 500 V560" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arr-ed)"/>
+<text x="978" y="588" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.7" text-anchor="middle">NO → DISCARDED (WORDING-ONLY CHANGE)</text>
+</g>
+<g data-i="1" style="--i: 0">
+<rect x="42" y="640" width="14" height="14" fill="#fff"/>
+<text x="66" y="652" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1" fill="#fff" fill-opacity="0.7" text-anchor="start">HUMAN REVIEW</text>
+<rect x="210" y="640" width="14" height="14" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="234" y="652" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1" fill="#fff" fill-opacity="0.7" text-anchor="start">AI STEP</text>
+<line x1="340" y1="647" x2="380" y2="647" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="392" y="652" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1" fill="#fff" fill-opacity="0.7" text-anchor="start">LEARNING LOOP</text>
+</g>
+</svg>
+</div>
+<p class="p">Editors stay in control at both ends: they approve visuals before assembly and check the final cut, while every reusable correction flows back into the playbook.</p>
+<div>
+<figure class="media clipm" data-enter="1">
+<video src="../assets/media/ai-video/playbook-scene.mp4" poster="../assets/media/ai-video/playbook-scene-poster.jpg" controls muted playsinline preload="metadata" aria-label="A lesson animation generated with the playbook: four kinds of goals (long-term growth, periodic cash flow, short-term opportunity, certainty), each explained with a visual" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #000"></video>
+
+</figure>
+<div class="cap">{ GENERATED WITH THE PLAYBOOK }</div>
+</div>
+</div>
+</section>
+
+<section aria-label="Key design decisions" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>05 · Key design decisions</div>
+<div class="flow">
+<div class="cards c3">
+<div class="card"><span class="cl">{ DESIGN DECISION }</span><h3>Reasoning over rules.</h3><p>Guidelines describe how a visual should look. The playbook captures why a visual explains a line, so the AI can apply that reasoning to scripts it has never seen.</p></div>
+<div class="card"><span class="cl">{ DESIGN DECISION }</span><h3>A learning loop with a filter.</h3><p>Only reusable logic goes into the playbook; one-off wording changes don’t. This keeps the playbook sharp instead of bloated.</p></div>
+<div class="card"><span class="cl">{ DESIGN DECISION }</span><h3>Design and assembly kept separate, with human review.</h3><p>Claude Design creates the visuals and an editor approves them. Claude Code only assembles what was approved, never redesigning, and an editor checks the final sequence. People set the quality bar; AI does the repetitive work.</p></div>
+</div>
+</div>
+</section>
+
+<section aria-label="Outcome and adoption" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>06 · Outcome and adoption</div>
+<div class="flow">
+<div class="bars" data-enter="1">
+<div class="bar-g">
+<span class="bar-k">{ EDITING · ANIMATION-HEAVY 6-MIN LESSON }</span>
+<div class="bar-row"><span class="bar-tag">BEFORE</span><div class="bar-track"><div class="bar-w" style="--w: 100%"><span class="bar before"></span><span class="bar-v">2–3 days</span></div></div></div>
+<div class="bar-row"><span class="bar-tag">AFTER</span><div class="bar-track"><div class="bar-w" style="--w: 40%"><span class="bar after"></span><span class="bar-v">1 day</span></div></div></div>
+</div>
+<div class="bar-g">
+<span class="bar-k">{ GENERATION · PER LESSON }</span>
+<div class="bar-row"><span class="bar-tag">BEFORE</span><div class="bar-track"><div class="bar-w" style="--w: 100%"><span class="bar before"></span><span class="bar-v">1.5+ hours of studio time</span></div></div></div>
+<div class="bar-row"><span class="bar-tag">AFTER</span><div class="bar-track"><div class="bar-w" style="--w: 28%"><span class="bar after"></span><span class="bar-v">20–30 minutes</span></div></div></div>
+</div>
+</div>
+<ul class="steps">
+<li><span class="n" aria-hidden="true">■</span><span class="t">In production for the FYERS Academy lesson library.</span></li>
+<li><span class="n" aria-hidden="true">■</span><span class="t">Several lessons can be generated at once.</span></li>
+<li><span class="n" aria-hidden="true">■</span><span class="t">Adopted beyond the original project: the avatar pipeline is used for product and marketing videos.</span></li>
+<li><span class="n" aria-hidden="true">■</span><span class="t">I led knowledge-transfer sessions to roll out the editing workflow to product and marketing teams after it was well received by the founders and stakeholders.</span></li>
+</ul>
+</div>
+</section>
+
+<section aria-label="Reflection" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>07 · Reflection</div>
+<div class="flow">
+<h3 class="sub">Trust instincts, but test them</h3>
+<p class="p">Before the brand-guidelines attempt was finished, I suspected rules alone wouldn’t be enough, so I’d already started laying the playbook’s foundation. When that attempt fell short, I was ready to move.</p>
+<h3 class="sub">Every failure pointed to the next fix</h3>
+<p class="p">Almost nothing worked on the first try, in both pipelines. But each attempt failed for a specific reason, and understanding that reason is what led to the solution.</p>
+<h3 class="sub">Current limitation</h3>
+<p class="p">The workflow still switches between Claude Design and Claude Code. It works, but it adds friction, and closing that gap is what I’d like to improve next.</p>
+<h3 class="sub">What’s next</h3>
+<p class="p">As the playbook keeps learning from corrections, I expect editing time to keep dropping, possibly toward half a day per lesson.</p>
+</div>
+</section>
+
+</main>
+
+<footer class="cs-foot" style="position: relative; z-index: 2; height: 60vh; box-sizing: border-box; background: #FAFAFA; color: #000; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr))">
+<div class="wipe" data-wipe="footer" aria-hidden="true" style="--wipe-color: #FAFAFA; --strength: 1.4"><span></span><span></span><span></span><span></span><span></span></div>
+<div class="cs-foot-l" style="box-sizing: border-box; padding: 24px; display: flex; flex-direction: column; justify-content: space-between">
+<a class="cs-back" href="../index.html#work" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 12px; color: #000; text-decoration: none; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em"><span class="cs-circ" aria-hidden="true" style="width: 40px; height: 40px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #000; border-radius: 50%; font-family: 'Inter', system-ui, sans-serif; font-size: 16px; letter-spacing: 0">←</span>{ BACK TO PROJECTS }</a>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #6B6B6B">© 2026 Devika K S</span>
+</div>
+<a class="cs-next" href="investor-persona-usability-research.html" data-cursor="next" aria-label="Next project: Investor-Persona Usability Research" style="box-sizing: border-box; padding: 24px; border-left: 1px solid #E2E2E2; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; color: #000; text-decoration: none">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em">{ NEXT PROJECT }</span>
+<div class="cs-thumb" style="position: relative; align-self: flex-end; width: 22vw; aspect-ratio: 16 / 9; overflow: hidden; background: #EDEDED">
+<img src="../assets/media/covers/02-investor-persona-usability-research.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1)">
+
+<div class="cs-glitch" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #6B6B6B">02</span>
+<span style="font-size: 40px; line-height: 1.05; letter-spacing: -0.03em">Investor-Persona Usability Research</span>
+<span style="padding: 6px 10px; border: 1px solid #000; font-family: 'IBM Plex Mono', monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase">UX Research</span>
+</div>
+</a>
+</footer>
+
+<button type="button" class="tm-btn" aria-label="Open menu" aria-expanded="false" aria-controls="torn-menu"><span class="tm-line" aria-hidden="true"></span><span class="tm-line" aria-hidden="true"></span></button>
+<nav id="torn-menu" class="tm-sheet" aria-label="Main menu" tabindex="-1" hidden>
+<svg class="tm-torn" aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,0 100,96 99.13,99.68 97.46,96.84 96.05,98.13 93.18,99.01 91.75,98.17 89.45,98.54 87.51,96.97 84.56,98.83 82.95,96.22 80.75,97.87 79.00,99.23 75.43,98.05 74.65,98.75 71.99,98.31 70.28,99.63 67.17,97.34 65.80,97.33 62.44,97.19 60.75,97.18 59.46,98.23 56.92,99.51 53.58,97.09 52.28,98.04 49.86,96.77 48.54,96.22 45.42,97.38 43.76,99.70 41.33,96.66 38.97,97.13 36.72,97.70 34.49,98.13 32.81,96.93 31.14,97.83 28.89,98.54 26.32,98.06 23.92,98.76 22.50,97.59 19.93,97.00 17.54,97.40 14.92,97.57 13.56,99.51 10.19,99.28 7.96,97.63 5.92,96.31 5.21,96.88 2.40,96.58 0.00,98.37 0,96" fill="#000"></polygon></svg>
+<div class="tm-inner">
+<ul class="tm-list">
+<li><div class="tm-row" style="--i: 0"><span class="tm-num">01</span><a class="tm-link" href="../index.html">Home</a></div></li>
+<li><div class="tm-row" style="--i: 1"><span class="tm-num">02</span><a class="tm-link" href="../index.html#work">Work</a></div></li>
+<li><div class="tm-row" style="--i: 2"><span class="tm-num">03</span><a class="tm-link" href="../index.html#about">About</a></div></li>
+<li><div class="tm-row" style="--i: 3"><span class="tm-num">04</span><a class="tm-link" href="../index.html#contact">Contact</a></div></li>
+<li aria-hidden="true"></li>
+</ul>
+</div>
+</nav>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Knowledge Layer — Devika K S</title>
+<meta name="description" content="How Devika K S made sure the reasoning behind decisions doesn't leave when people do.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&amp;family=IBM+Plex+Mono:wght@400&amp;family=Shrikhand&amp;family=Bagel+Fat+One&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/case-study.css">
+<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/case-study.js" defer></script>
+</head>
+<body class="vp page-knowledge">
+<svg width="0" height="0" aria-hidden="true" style="position: absolute"><defs><filter id="grain-v1"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter></defs></svg>
+
+<div class="entry-blocks" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
+<header class="hero" style="position: relative; height: 100vh; box-sizing: border-box; overflow: hidden; border-bottom: 1px solid rgba(255, 255, 255, 0.2)">
+<div class="hero-media" style="position: absolute; top: 0; left: 0; right: 0; height: 60vh; overflow: hidden; background: #000">
+<div class="hero-zoom" style="position: absolute; inset: 0">
+<svg viewBox="0 0 1680 620" role="img" aria-label="Knowledge layer: sources in, cited answers out. Research, decisions, meeting minutes, definitions and citations feed NotebookLM, which answers only from those sources, with citations. Out come cited answers, each linking its source. Anyone can ask, anytime: why does it work this way, what breaks if we change this, is this a bug or intended." style="display: block; width: 100%; height: 100%">
+<defs>
+<marker id="arr-kh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+<path d="M0 0 L10 5 L0 10 z" fill="#fff"/>
+</marker>
+</defs>
+<rect width="1680" height="620" fill="#000"/>
+<text x="40" y="56" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1" fill="#fff" fill-opacity="1" text-anchor="start">{ KNOWLEDGE LAYER · SOURCES IN, CITED ANSWERS OUT }</text>
+<text x="40" y="126" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ SOURCES IN }</text>
+<rect x="40" y="140" width="300" height="60" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="190.0" y="175.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">RESEARCH</text>
+<path d="M340 170 H480" fill="none" stroke="#fff" stroke-width="1.5"/>
+<rect x="40" y="214" width="300" height="60" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="190.0" y="249.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">DECISIONS</text>
+<path d="M340 244 H480" fill="none" stroke="#fff" stroke-width="1.5"/>
+<rect x="40" y="288" width="300" height="60" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="190.0" y="323.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">MEETING MINUTES</text>
+<path d="M340 318 H480" fill="none" stroke="#fff" stroke-width="1.5"/>
+<rect x="40" y="362" width="300" height="60" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="190.0" y="397.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">DEFINITIONS</text>
+<path d="M340 392 H480" fill="none" stroke="#fff" stroke-width="1.5"/>
+<rect x="40" y="436" width="300" height="60" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="190.0" y="471.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">CITATIONS</text>
+<path d="M340 466 H480" fill="none" stroke="#fff" stroke-width="1.5"/>
+<path d="M480 170 V466" fill="none" stroke="#fff" stroke-width="1.5"/>
+<path d="M480 320 H612" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-kh)"/>
+<text x="620" y="236" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ THE LAYER }</text>
+<rect x="620" y="250" width="400" height="140" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="820.0" y="303.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">NOTEBOOKLM</text>
+<text x="820.0" y="325.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">ANSWERS ONLY FROM SOURCES</text>
+<text x="820.0" y="347.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">WITH CITATIONS</text>
+<path d="M1020 320 H1232" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-kh)"/>
+<text x="1240" y="236" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ OUT }</text>
+<rect x="1240" y="250" width="400" height="140" fill="#fff" stroke="#fff" stroke-width="1.5"/>
+<text x="1440.0" y="303.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#000" fill-opacity="1" text-anchor="middle">CITED ANSWERS</text>
+<text x="1440.0" y="325.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#000" fill-opacity="0.7" text-anchor="middle">EVERY ANSWER LINKS</text>
+<text x="1440.0" y="347.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#000" fill-opacity="0.7" text-anchor="middle">ITS SOURCE</text>
+<text x="620" y="584" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ ANYONE CAN ASK, ANYTIME }</text>
+<rect x="620" y="486" width="320" height="64" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="780.0" y="523.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">WHY DOES IT WORK THIS WAY?</text>
+<rect x="960" y="486" width="320" height="64" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="1120.0" y="523.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">WHAT BREAKS IF WE CHANGE THIS?</text>
+<rect x="1300" y="486" width="320" height="64" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="1460.0" y="523.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">IS THIS A BUG, OR INTENDED?</text>
+<path d="M780 486 V398" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-kh)"/>
+</svg>
+</div>
+</div>
+<div class="tbar" style="position: absolute; top: 60vh; left: 24px; right: 24px; padding-top: 24px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px">
+<h1 class="hero-title" style="margin: 0; font-size: 48px; line-height: 1.05; font-weight: 500; letter-spacing: -0.03em; color: #fff">AI Knowledge Layer</h1>
+<span style="flex: none; font-family: 'Shrikhand', serif; font-style: italic; font-size: 32px; line-height: 1; color: rgba(255, 255, 255, 0.5)">04</span>
+</div>
+<p class="hsub" style="margin: 12px 0 0; max-width: 640px; font-size: 20px; line-height: 1.35; letter-spacing: -0.01em; color: rgba(255, 255, 255, 0.7)">Making sure the reasoning behind decisions doesn’t leave when people do.</p>
+</div>
+<div class="hb" style="position: absolute; left: 24px; right: 24px; bottom: 24px; display: grid; grid-template-columns: 1.4fr 0.6fr 1.2fr auto; column-gap: 24px; align-items: start">
+<div><div class="hk">{ ROLE }</div><div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">Researched</span><span class="chip">Recommended</span><span class="chip">Built</span></div></div>
+<div><div class="hk">{ YEAR }</div><div class="hv">2026</div></div>
+<div><div class="hk">{ RESEARCH }</div><div class="hv">2 weeks, using ChatGPT, Gemini, and web research</div></div>
+<span class="hk" style="color: #fff; white-space: nowrap">{ SCROLL } <span class="bob">↓</span></span>
+</div>
+</header>
+
+<section class="strip" aria-label="Outcomes">
+<div><span class="fig" style="font-size: 40px">Adopted by the team</span><span class="hk">{ NOTEBOOKLM }</span></div>
+<div><span class="fig" style="font-size: 40px">Every answer cited</span><span class="hk">{ CHECK THE REASONING }</span></div>
+<div><span class="fig" style="font-size: 40px">Project knowledge base</span><span class="hk">{ FYERS ACADEMY }</span></div>
+</section>
+
+<main class="vmain" style="box-sizing: border-box; padding: 200px 24px; display: flex; flex-direction: column; gap: 200px">
+
+<section aria-label="The problem" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>01 · The problem</div>
+<div class="flow">
+<p class="p">In a learn-by-doing trading product, subject matter experts make countless small decisions: how realistic the simulator should be versus how easy it is to learn from, or how accurate versus how safe for beginners. Those decisions mostly live in chats and meetings.</p>
+<blockquote class="pq">Documentation records what a system does, but rarely why.</blockquote>
+<p class="p">When an expert leaves, the reasoning leaves too. New team members then either hesitate to change anything, or confidently “fix” something that was intentional.</p>
+</div>
+</section>
+
+<section aria-label="What I did" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>02 · What I did</div>
+<div class="flow">
+<h3 class="sub">Reframed the question</h3>
+<div class="reframe">
+<div class="card"><span class="cl">{ STARTED WITH }</span><h3 style="color: rgba(255, 255, 255, 0.5)">Can AI act as a subject matter expert?</h3></div>
+<span class="rf-arrow" aria-hidden="true">→</span>
+<div class="card"><span class="cl">{ BETTER QUESTION }</span><h3>How do we preserve an expert’s reasoning, so anyone can ask about it later?</h3></div>
+</div>
+<h3 class="sub">Defined the concept: a decision intelligence layer</h3>
+<p class="p">A searchable record of decisions, reasons, trade-offs, and intent, able to answer questions like:</p>
+<ul class="steps big">
+<li><span class="n" aria-hidden="true">■</span><span class="t">“Why does it work this way?”</span></li>
+<li><span class="n" aria-hidden="true">■</span><span class="t">“What breaks if we change this?”</span></li>
+<li><span class="n" aria-hidden="true">■</span><span class="t">“Is this a bug, or intended?”</span></li>
+</ul>
+</div>
+</section>
+
+<section aria-label="Tool comparison" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>03 · Tool comparison</div>
+<div class="flow">
+<table class="tb tcmp">
+<colgroup><col style="width: 30%"><col style="width: 40%"><col style="width: 30%"></colgroup>
+<thead><tr><th scope="col">Criteria</th><th scope="col">NotebookLM <span class="rec">{ RECOMMENDED }</span></th><th scope="col">ChatGPT Projects</th></tr></thead>
+<tbody>
+<tr data-rowfade="1"><td data-label="CRITERIA">Answers grounded in the team’s documents</td><td data-label="NOTEBOOKLM">Strong: answers only from sources, with citations</td><td class="dimc" data-label="CHATGPT PROJECTS">Medium: can mix in general knowledge</td></tr>
+<tr data-rowfade="1"><td data-label="CRITERIA">Persistent knowledge base</td><td data-label="NOTEBOOKLM">Yes</td><td class="dimc" data-label="CHATGPT PROJECTS">Partial</td></tr>
+<tr data-rowfade="1"><td data-label="CRITERIA">Setup speed</td><td data-label="NOTEBOOKLM">Medium</td><td class="dimc" data-label="CHATGPT PROJECTS">Fast</td></tr>
+</tbody>
+</table>
+<p class="p">I recommended NotebookLM, because for this job, accuracy and staying true to the team’s own records matter more than speed.</p>
+</div>
+</section>
+
+<section aria-label="Limits" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>04 · Limits</div>
+<div class="flow">
+<div class="cards c4">
+<div class="card"><span class="cl">{ LIMIT }</span><h3>It only knows what’s uploaded</h3></div>
+<div class="card"><span class="cl">{ LIMIT }</span><h3>Messy sources produce messy answers</h3></div>
+<div class="card"><span class="cl">{ LIMIT }</span><h3>Sources need manual updates</h3></div>
+<div class="card"><span class="cl">{ LIMIT }</span><h3>It supports human judgment rather than replacing it</h3></div>
+</div>
+</div>
+</section>
+
+<section aria-label="How experts feed it" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>05 · How experts feed it</div>
+<div class="flow">
+<p class="p">The system can only capture reasoning that’s clearly stated, so I outlined how experts should explain decisions as explicit rules (“if this happens, do that, because...”) rather than gut feel. This also informed the profile for future subject matter expert hires.</p>
+<div class="dg"><figure class="clipm" data-enter="1" style="margin: 0">
+<svg viewBox="0 0 1680 340" role="img" aria-label="How experts explain a decision: not “it just feels right,” but an explicit rule the layer can capture. If this happens, do that, because of the reasoning. The “because” is what stays when the expert leaves." style="display: block; width: 100%; height: auto; min-width: 900px">
+<defs>
+<marker id="arr-rf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+<path d="M0 0 L10 5 L0 10 z" fill="#fff"/>
+</marker>
+</defs>
+<rect width="1680" height="340" fill="#000"/>
+<text x="40" y="56" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1" fill="#fff" fill-opacity="1" text-anchor="start">{ HOW EXPERTS EXPLAIN A DECISION }</text>
+<text x="40" y="106" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">NOT “IT JUST FEELS RIGHT.” AN EXPLICIT RULE THE LAYER CAN CAPTURE:</text>
+<rect x="40" y="140" width="480" height="120" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="280.0" y="194.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">IF</text>
+<text x="280.0" y="216.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">THIS HAPPENS</text>
+<path d="M520 200 H592" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-rf)"/>
+<rect x="600" y="140" width="480" height="120" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="840.0" y="194.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">DO</text>
+<text x="840.0" y="216.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">THAT</text>
+<path d="M1080 200 H1152" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-rf)"/>
+<rect x="1160" y="140" width="480" height="120" fill="#fff" stroke="#fff" stroke-width="1.5"/>
+<text x="1400.0" y="194.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#000" fill-opacity="1" text-anchor="middle">BECAUSE</text>
+<text x="1400.0" y="216.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#000" fill-opacity="0.7" text-anchor="middle">THE REASONING</text>
+<text x="1640" y="300" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.7" text-anchor="end">THE “BECAUSE” IS WHAT STAYS WHEN THE EXPERT LEAVES</text>
+</svg>
+</figure></div>
+</div>
+</section>
+
+<section aria-label="What came of it" style="max-width: 1100px">
+<div class="lbl"><span class="sq" aria-hidden="true"></span>06 · What came of it</div>
+<div class="flow">
+<p class="p">The team adopted NotebookLM based on this research. For FYERS Academy, I built the project’s knowledge base: research, decisions, meeting minutes, definitions, and citations, shared with stakeholders so they can ask questions about the project anytime.</p>
+<div class="dg"><figure class="clipm" data-enter="1" style="margin: 0">
+<svg viewBox="0 0 1680 620" role="img" aria-label="Knowledge layer: sources in, cited answers out. Research, decisions, meeting minutes, definitions and citations feed NotebookLM, which answers only from those sources, with citations. Out come cited answers, each linking its source. Anyone can ask, anytime: why does it work this way, what breaks if we change this, is this a bug or intended." style="display: block; width: 100%; height: auto; min-width: 900px">
+<defs>
+<marker id="arr-kl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+<path d="M0 0 L10 5 L0 10 z" fill="#fff"/>
+</marker>
+</defs>
+<rect width="1680" height="620" fill="#000"/>
+<text x="40" y="56" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1" fill="#fff" fill-opacity="1" text-anchor="start">{ KNOWLEDGE LAYER · SOURCES IN, CITED ANSWERS OUT }</text>
+<text x="40" y="126" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ SOURCES IN }</text>
+<rect x="40" y="140" width="300" height="60" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="190.0" y="175.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">RESEARCH</text>
+<path d="M340 170 H480" fill="none" stroke="#fff" stroke-width="1.5"/>
+<rect x="40" y="214" width="300" height="60" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="190.0" y="249.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">DECISIONS</text>
+<path d="M340 244 H480" fill="none" stroke="#fff" stroke-width="1.5"/>
+<rect x="40" y="288" width="300" height="60" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="190.0" y="323.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">MEETING MINUTES</text>
+<path d="M340 318 H480" fill="none" stroke="#fff" stroke-width="1.5"/>
+<rect x="40" y="362" width="300" height="60" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="190.0" y="397.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">DEFINITIONS</text>
+<path d="M340 392 H480" fill="none" stroke="#fff" stroke-width="1.5"/>
+<rect x="40" y="436" width="300" height="60" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="190.0" y="471.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">CITATIONS</text>
+<path d="M340 466 H480" fill="none" stroke="#fff" stroke-width="1.5"/>
+<path d="M480 170 V466" fill="none" stroke="#fff" stroke-width="1.5"/>
+<path d="M480 320 H612" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-kl)"/>
+<text x="620" y="236" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ THE LAYER }</text>
+<rect x="620" y="250" width="400" height="140" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="820.0" y="303.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">NOTEBOOKLM</text>
+<text x="820.0" y="325.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">ANSWERS ONLY FROM SOURCES</text>
+<text x="820.0" y="347.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#fff" fill-opacity="0.75" text-anchor="middle">WITH CITATIONS</text>
+<path d="M1020 320 H1232" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-kl)"/>
+<text x="1240" y="236" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ OUT }</text>
+<rect x="1240" y="250" width="400" height="140" fill="#fff" stroke="#fff" stroke-width="1.5"/>
+<text x="1440.0" y="303.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#000" fill-opacity="1" text-anchor="middle">CITED ANSWERS</text>
+<text x="1440.0" y="325.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#000" fill-opacity="0.7" text-anchor="middle">EVERY ANSWER LINKS</text>
+<text x="1440.0" y="347.0" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="400" letter-spacing="0.5" fill="#000" fill-opacity="0.7" text-anchor="middle">ITS SOURCE</text>
+<text x="620" y="584" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#fff" fill-opacity="0.55" text-anchor="start">{ ANYONE CAN ASK, ANYTIME }</text>
+<rect x="620" y="486" width="320" height="64" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="780.0" y="523.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">WHY DOES IT WORK THIS WAY?</text>
+<rect x="960" y="486" width="320" height="64" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="1120.0" y="523.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">WHAT BREAKS IF WE CHANGE THIS?</text>
+<rect x="1300" y="486" width="320" height="64" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="1460.0" y="523.0" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" letter-spacing="0.5" fill="#fff" fill-opacity="1" text-anchor="middle">IS THIS A BUG, OR INTENDED?</text>
+<path d="M780 486 V398" fill="none" stroke="#fff" stroke-width="1.5" marker-end="url(#arr-kl)"/>
+</svg>
+</figure></div>
+<blockquote class="pq">Because every answer cites its source, people can check the reasoning themselves instead of relying on whoever happens to remember it.</blockquote>
+</div>
+</section>
+
+</main>
+
+<footer class="cs-foot" style="position: relative; z-index: 2; height: 60vh; box-sizing: border-box; background: #FAFAFA; color: #000; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr))">
+<div class="wipe" data-wipe="footer" aria-hidden="true" style="--wipe-color: #FAFAFA; --strength: 1.4"><span></span><span></span><span></span><span></span><span></span></div>
+<div class="cs-foot-l" style="box-sizing: border-box; padding: 24px; display: flex; flex-direction: column; justify-content: space-between">
+<a class="cs-back" href="../index.html#work" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 12px; color: #000; text-decoration: none; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em"><span class="cs-circ" aria-hidden="true" style="width: 40px; height: 40px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #000; border-radius: 50%; font-family: 'Inter', system-ui, sans-serif; font-size: 16px; letter-spacing: 0">←</span>{ BACK TO PROJECTS }</a>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #6B6B6B">© 2026 Devika K S</span>
+</div>
+<a class="cs-next" href="visual-design.html" data-cursor="next" aria-label="Next project: Visual Design" style="box-sizing: border-box; padding: 24px; border-left: 1px solid #E2E2E2; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; color: #000; text-decoration: none">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em">{ NEXT PROJECT }</span>
+<div class="cs-thumb" style="position: relative; align-self: flex-end; width: 22vw; aspect-ratio: 16 / 9; overflow: hidden; background: #EDEDED">
+<img src="../assets/media/covers/05-visual-design.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1)">
+
+<div class="cs-glitch" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #6B6B6B">05</span>
+<span style="font-size: 40px; line-height: 1.05; letter-spacing: -0.03em">Visual Design</span>
+<span style="padding: 6px 10px; border: 1px solid #000; font-family: 'IBM Plex Mono', monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase">Visual Design</span>
+</div>
+</a>
+</footer>
+
+<button type="button" class="tm-btn" aria-label="Open menu" aria-expanded="false" aria-controls="torn-menu"><span class="tm-line" aria-hidden="true"></span><span class="tm-line" aria-hidden="true"></span></button>
+<nav id="torn-menu" class="tm-sheet" aria-label="Main menu" tabindex="-1" hidden>
+<svg class="tm-torn" aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,0 100,96 99.13,99.68 97.46,96.84 96.05,98.13 93.18,99.01 91.75,98.17 89.45,98.54 87.51,96.97 84.56,98.83 82.95,96.22 80.75,97.87 79.00,99.23 75.43,98.05 74.65,98.75 71.99,98.31 70.28,99.63 67.17,97.34 65.80,97.33 62.44,97.19 60.75,97.18 59.46,98.23 56.92,99.51 53.58,97.09 52.28,98.04 49.86,96.77 48.54,96.22 45.42,97.38 43.76,99.70 41.33,96.66 38.97,97.13 36.72,97.70 34.49,98.13 32.81,96.93 31.14,97.83 28.89,98.54 26.32,98.06 23.92,98.76 22.50,97.59 19.93,97.00 17.54,97.40 14.92,97.57 13.56,99.51 10.19,99.28 7.96,97.63 5.92,96.31 5.21,96.88 2.40,96.58 0.00,98.37 0,96" fill="#000"></polygon></svg>
+<div class="tm-inner">
+<ul class="tm-list">
+<li><div class="tm-row" style="--i: 0"><span class="tm-num">01</span><a class="tm-link" href="../index.html">Home</a></div></li>
+<li><div class="tm-row" style="--i: 1"><span class="tm-num">02</span><a class="tm-link" href="../index.html#work">Work</a></div></li>
+<li><div class="tm-row" style="--i: 2"><span class="tm-num">03</span><a class="tm-link" href="../index.html#about">About</a></div></li>
+<li><div class="tm-row" style="--i: 3"><span class="tm-num">04</span><a class="tm-link" href="../index.html#contact">Contact</a></div></li>
+<li aria-hidden="true"></li>
+</ul>
+</div>
+</nav>
+</body>
+</html>
